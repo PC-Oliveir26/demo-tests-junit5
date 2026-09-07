@@ -21,7 +21,6 @@ public class ProductServiceTest {
 	private ProductRepository productRepository;
 
 	@Test
-	@Disabled
 	public void shouldSavedTheProducto() {
 		Product product = new Product("computer", new BigDecimal(2000), "PAGO");
 
@@ -31,8 +30,8 @@ public class ProductServiceTest {
 		String name = this.productRepository.findById(1L).get().getName();
 		
 		Assertions.assertEquals(1, size);
-		Assertions.assertEquals("computer", name);
-		
+		Assertions.assertEquals("computer", name, "no equals, expect:'computer'");
+
 	}
 	
 	@Test

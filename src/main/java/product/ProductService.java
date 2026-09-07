@@ -13,7 +13,7 @@ public class ProductService {
 	
 	public void save (Product product) {
 		if (this.validationService.canSave(product)) {
-			this.productRepository.save(null);
+			this.productRepository.save(product);
 		}
 	}
 	
