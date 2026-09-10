@@ -1,5 +1,7 @@
 package math;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -9,8 +11,10 @@ class SimpleMathTest {
 	void testSum() {
 		SimpleMath math = new SimpleMath();
 		Double actual = math.sum(35D, 10D);
-		Assertions.assertEquals(45, actual);
-//		System.out.print(actual);
+		
+		assertEquals(45, actual);
+		assertNotEquals(5.5, actual);
+		assertNotNull(actual);
 	}
 	
 	@Test 
