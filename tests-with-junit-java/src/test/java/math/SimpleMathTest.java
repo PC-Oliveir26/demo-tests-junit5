@@ -15,8 +15,17 @@ class SimpleMathTest {
 	@Test
 	@DisplayName("Test 35 + 10 = 45")
 	void testSum_When_ThintyFiveIsAddedByTen_ShouldReturnFortyFive() {
-		Double actual = math.sum(35D, 10D);
-		assertEquals(45, actual, () -> message);
+//		Given
+		SimpleMath mathSum = new SimpleMath();
+		Double firstNumber = 35D;
+		Double secondNumber = 10D;
+		Double expected = 45D;
+		
+//		When
+		Double actual = mathSum.sum(firstNumber,secondNumber);
+		
+//		Then
+		assertEquals(expected, actual, () -> message);
 	}
 
 	@Test
@@ -54,6 +63,10 @@ class SimpleMathTest {
 		Assertions.assertEquals(12, actual);
 	}
 	
-//	Default:
-//	test[System Under Test]_[Condition or Stage Change]_[Expected Resume]
+/*
+ * 	BDD Style or AAA
+ *  Given / Arrange 
+ *  When / Act
+ *  Then / Assert
+ */
 }
