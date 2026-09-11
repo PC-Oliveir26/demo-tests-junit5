@@ -2,30 +2,53 @@ package math;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Test Math Operations in SimpleMath Class")
 class SimpleMathTest {
 
-	SimpleMath math = new SimpleMath();
-	String message = "didn't expected";
+	private String message = "didn't expected";
+	private SimpleMath math;
+
+	@BeforeAll
+	static void setup() {
+		System.out.println("running test");
+	}
+
+	@BeforeEach
+	public void simpleMathTest() {
+		this.math = new SimpleMath();
+	}
+
+	@AfterEach
+	void testToTest() {
+		System.out.println("done test");
+	}
+
+	@AfterAll
+	static void AllTest() {
+		System.out.println("tests finalized");
+	}
 
 	@Test
 	@DisplayName("Test 35 + 10 = 45")
 	void testSum_When_ThintyFiveIsAddedByTen_ShouldReturnFortyFive() {
 //		Given
-		SimpleMath mathSum = new SimpleMath();
 		Double firstNumber = 35D;
 		Double secondNumber = 10D;
 		Double expected = 45D;
 
 //		When
-		Double actual = mathSum.sum(firstNumber, secondNumber);
+		Double actual = math.sum(firstNumber, secondNumber);
 
 //		Then
-		assertEquals(expected, actual, () -> message);
+		assertEquals(expected, actual, message);
 	}
 
 	@Test
@@ -63,14 +86,4 @@ class SimpleMathTest {
 		Assertions.assertEquals(12, actual);
 	}
 
-	
-//	Template:
-	@Test
-	@DisplayName("Display Name")
-	void testABC_When_XYZ_Should() {
-
-//	Given / Arrange
-//	When / Act
-//	Then / Assert
-	}
 }
