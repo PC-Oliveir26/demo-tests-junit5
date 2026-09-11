@@ -20,10 +20,10 @@ class SimpleMathTest {
 		Double firstNumber = 35D;
 		Double secondNumber = 10D;
 		Double expected = 45D;
-		
+
 //		When
-		Double actual = mathSum.sum(firstNumber,secondNumber);
-		
+		Double actual = mathSum.sum(firstNumber, secondNumber);
+
 //		Then
 		assertEquals(expected, actual, () -> message);
 	}
@@ -62,11 +62,15 @@ class SimpleMathTest {
 		Double actual = math.squareRoot(144D);
 		Assertions.assertEquals(12, actual);
 	}
+
 	
-/*
- * 	BDD Style or AAA
- *  Given / Arrange 
- *  When / Act
- *  Then / Assert
- */
+//	Template:
+	@Test
+	@DisplayName("Display Name")
+	void testABC_When_XYZ_Should() {
+
+//	Given / Arrange
+//	When / Act
+//	Then / Assert
+	}
 }
