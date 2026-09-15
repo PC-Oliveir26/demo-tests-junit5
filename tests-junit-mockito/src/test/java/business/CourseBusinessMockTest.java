@@ -21,9 +21,10 @@ class CourseBusinessMockTest {
 	List<String> courses;
 
 	@BeforeEach
-	void stup() {
+	void setup() {
 		mockService = mock(CourseService.class);
 		business = new CourseBusiness(mockService);
+		
 		courses = Arrays.asList(
 				"Formação Java Testing 2026: Testes Automatizados com JUnit, Mockito, Spring Boot, TDD e TestContainers",
 				"Formação Spring Boot 2026: do Zero ao Deploy na AWS e GCP com Java, Docker e Kubernetes",
